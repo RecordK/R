@@ -1,0 +1,21 @@
+library(readxl)
+library(data.table)
+library(bit64)
+test333=fread("/Users/kimkirok/Desktop/test333.csv")
+test444=test333[,-c(1,5:14)]
+View(test444)
+View(test333)
+test445=test444[order(test444$PERSON_ID,)]
+View(test445)
+test556=fread("/Users/kimkirok/Documents/1/2/345.csv",
+              sep = ",")
+test5577=test556[,-1]
+test558=test5578[,c(1,2,4,7,8)]
+View(test5577)
+fwrite(test5577,file="/Users/kimkirok/Desktop/test5577.csv")
+test5578=fread("/Users/kimkirok/Desktop/test5577.csv")
+View(test558)
+test559=test558[order(test558$PERSON_ID)]
+test6=cbind(test445,test559)
+View(test6)
+fwrite(test6,file="/Users/kimkirok/Desktop/test6.csv")
